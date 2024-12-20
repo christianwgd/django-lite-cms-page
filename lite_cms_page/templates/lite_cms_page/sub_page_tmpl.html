@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static i18n menu_tags base_tags django_bootstrap5 %}
+
+{% block bootstrap5_extra_head %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "page/css/page.css" %}" />
+{% endblock %}
+
+{% block page_title %}{{ page.title }}{% endblock %}
+
+{% block edit_toolbar %}{% edit_toolbar page perms.page.change_page %}{% endblock %}
+
+{% block breadcrumbs %}
+    {% trans 'Home' as home %}
+    {% breadcrumb home 'home' %}
+    {% if page.parent and not page.parent.breadcrumb_exclude %}
+        {% if page.parent.parent and not page.parent.parent.breadcrumb_exclude %}
+            {% breadcrumb page.parent.parent.title 'page:page-view' page.parent.parent.slug %}
+        {% endif %}
+        {% breadcrumb page.parent.title 'page:page-view' page.parent.slug %}
+    {% endif %}
+    {% breadcrumb page.title 'page:page-view' page.slug %}
+{% endblock %}
+
+{% block content %}
+<div class="panel-white">
+    {{ page.content|safe }}
+</div>
+{% endblock %}
+
+{% block sidebar_nav %}
+    <div class="panel-white panel-margin-bottom">
+        {% if page.is_leaf_node %}
+            {% submenu page.parent 'page/includes/submenuright.html' %}
+        {% else %}
+            {% submenu page 'page/includes/submenuright.html' %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+

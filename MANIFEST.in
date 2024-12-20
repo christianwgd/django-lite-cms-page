@@ -1,0 +1,11 @@
+include LICENSE README.md CHANGELOG.md
+recursive-include lite_cms_page/static *
+recursive-include lite_cms_page/templates *.html *.txt
+recursive-include lite_cms_page/templates/includes *.html *.txt
+recursive-include lite_cms_page/locale/*/LC_MESSAGES *.mo *.po
+recursive-include lite_cms_page/templatetags *
+recursive-exclude * __pycache__
+recursive-exclude * *.png
+recursive-exclude * manage.py
+recursive-exclude *
+recursive-exclude lite_cms_page *

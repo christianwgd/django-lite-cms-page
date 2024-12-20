@@ -1,0 +1,64 @@
+{% extends 'django_bootstrap5/bootstrap5.html' %}
+{% load static base_tags menu_tags %}
+
+{% block bootstrap5_extra_head %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'lite_cms_core/css/toolbar.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'lite_cms_page/css/page.css' %}">
+{% endblock %}
+
+{% block bootstrap5_extra_script %}
+<script defer src="{% static 'lite_cms_core/js/toolbar.js' %}"></script>
+{% endblock %}
+
+{% block bootstrap5_title %}{% endblock %}
+
+{% block bootstrap5_content %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            {% if config.logo %}
+            <img class="navbar-img" src="{{ config.logo.url }}" height="50">
+            {% endif %}
+            {% if config.name_in_navbar %}
+            <span class="navbar-app-name">{{ config.name }}</span>
+            {% endif %}
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        {% trans 'Home' %}
+                    </a>
+                </li>
+                {% menu 'top' 'lite_cms_page/includes/top_menu.html' %}
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- end Navigation -->
+
+{% if user.is_staff %}
+{% block edit_toolbar %}
+    {% edit_toolbar %}
+{% endblock %}
+{% endif %}
+
+<!-- Content -->
+<div class="container mb-3" id="id_content">
+
+    <div class="row">
+        <div class="col-12">
+            <h3 class="page_title">{% block page_title %}{% endblock %}</h3>
+            {% bootstrap_messages %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+<!-- END Content -->
+{% endblock %}

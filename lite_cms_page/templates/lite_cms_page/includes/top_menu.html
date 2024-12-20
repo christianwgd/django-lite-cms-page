@@ -1,0 +1,49 @@
+{% load menu_tags mptt_tags %}
+{% recursetree pages %}
+{% with node as page %}
+{% if page.login_required and request.user.is_authenticated or not page.login_required %}
+    {% if page.is_leaf_node %}
+        {% if page.level == 0 %}
+        <li class="nav-item">
+            {% if page.static %}
+            <span class="static">
+                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {{ page.name }}
+            </span>
+            {% else %}
+            <a class="nav-link" href="{{ page.get_absolute_url }}"
+                {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
+                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {{ page.name }}
+            </a>
+            {% endif %}
+        </li>
+        {% else %}
+        <a class="dropdown-item" href="{{ page.get_absolute_url }}"
+            {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
+            {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+            {{ page.name }}
+        </a>
+        {% endif %}
+    {% else %}
+        {% if page.level == 0 %}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="{{ page.slug }}" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {{ page.name }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="{{ page.slug }}">
+                {{ children }}
+            </div>
+        </li>
+        {% else %}
+        <a class="dropdown-item" href="{{ page.get_absolute_url }}"
+            {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
+            {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+            {{ page.name }}
+        </a>
+        {% endif %}
+    {% endif %}
+{% endif %}
+{% endwith %}
+{% endrecursetree %}

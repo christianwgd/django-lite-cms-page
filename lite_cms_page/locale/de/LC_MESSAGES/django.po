@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-25 19:51+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:26 models.py:48
+msgid "Page"
+msgstr "Seite"
+
+#: admin.py:29
+msgid "Link"
+msgstr ""
+
+#: admin.py:32 models.py:24 models.py:33
+msgid "Menu"
+msgstr "Menü"
+
+#: admin.py:40
+msgid "Status"
+msgstr ""
+
+#: apps.py:7 models.py:49
+msgid "Pages"
+msgstr "Seiten"
+
+#: models.py:25 models.py:64
+msgid "Menus"
+msgstr "Menü"
+
+#: models.py:56
+msgid "name"
+msgstr "Name"
+
+#: models.py:57
+msgid "Name of menu item."
+msgstr "Name des Menüpunktes."
+
+#: models.py:60
+msgid "icon"
+msgstr "Symbol"
+
+#: models.py:67
+msgid "URL"
+msgstr ""
+
+#: models.py:71
+msgid "Open in new window"
+msgstr "In einem neuen Fenster öffnen"
+
+#: models.py:79
+msgid "Static Element"
+msgstr "Statisches Element"
+
+#: models.py:80
+msgid "Element ist for navigation only, no link if selected."
+msgstr "Nür für Menü-Navigation, kein Link, falls ausgwählt."
+
+#: models.py:84
+msgid "menu image"
+msgstr "Menübild"
+
+#: models.py:87
+msgid "Template"
+msgstr ""
+
+#: models.py:91
+msgid "Login required"
+msgstr "Anmeldung benötigt"
+
+#: models.py:92
+msgid "If checked, only logged in users can view this page"
+msgstr "Wenn aktiviert, ist diese Seite nur für angemeldete Benutzer sichtbar"
+
+#: models.py:95
+msgid "Exclude from Breadcrumbs"
+msgstr "Aus Breadcrumbs ausschließen"
+
+#: models.py:96
+msgid "Will be excluded from Breadcumbs, if checked"
+msgstr "Falls ausgewählt, wird diese Seite nicht in der Breadcrumb-Leiste angezeigt"
+
+#: templates/page/page_detail.html:10 templates/page/sub_page_tmpl.html:14
+msgid "Home"
+msgstr ""
+
+#~ msgid "Edit in Admin"
+#~ msgstr "In Admin bearbeiten"

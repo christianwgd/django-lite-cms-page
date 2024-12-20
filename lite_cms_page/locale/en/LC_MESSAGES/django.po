@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-19 16:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:26 models.py:44
+msgid "Page"
+msgstr ""
+
+#: admin.py:29
+msgid "Link"
+msgstr ""
+
+#: admin.py:32 models.py:23 models.py:29
+msgid "Menu"
+msgstr ""
+
+#: admin.py:39
+msgid "Status"
+msgstr ""
+
+#: admin.py:48
+msgid "View on site"
+msgstr ""
+
+#: apps.py:7 models.py:45
+msgid "Pages"
+msgstr ""
+
+#: models.py:24 models.py:60
+msgid "Menus"
+msgstr ""
+
+#: models.py:30
+msgid "Slug"
+msgstr ""
+
+#: models.py:52
+msgid "name"
+msgstr "Name"
+
+#: models.py:53
+msgid "Name of menu item."
+msgstr ""
+
+#: models.py:56
+msgid "icon"
+msgstr "Icon"
+
+#: models.py:63
+msgid "URL"
+msgstr ""
+
+#: models.py:67
+msgid "Open in new window"
+msgstr ""
+
+#: models.py:75
+msgid "Static Element"
+msgstr ""
+
+#: models.py:76
+msgid "Element ist for navigation only, no link if selected."
+msgstr ""
+
+#: models.py:80
+msgid "menu image"
+msgstr ""
+
+#: models.py:83
+msgid "Template"
+msgstr ""
+
+#: models.py:87
+msgid "Login required"
+msgstr ""
+
+#: models.py:88
+msgid "If checked, only logged in users can view this page"
+msgstr ""
+
+#: templates/page/page_detail.html:15
+#: templates/page/page_mitgliedschaft.html:13
+#: templates/page/page_verein.html:13
+msgid "Edit in Admin"
+msgstr ""

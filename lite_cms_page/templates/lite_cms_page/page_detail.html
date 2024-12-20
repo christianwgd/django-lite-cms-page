@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static django_bootstrap5 l10n i18n base_tags %}
+
+{% block bootstrap5_extra_head %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "page/css/page.css" %}" />
+{% endblock %}
+
+{% block page_title %}
+    {{ page.title }}
+{% endblock %}
+
+{% block side_navigation %}{% endblock %}
+
+{% block edit_toolbar %}{% edit_toolbar page perms.page.change_page %}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 transparent-frame">
+        <div class="panel-white">
+            {{ page.content|safe }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
