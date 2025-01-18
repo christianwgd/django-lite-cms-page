@@ -19,11 +19,13 @@
             {% endif %}
         </li>
         {% else %}
-        <a class="dropdown-item" href="{{ page.get_absolute_url }}"
-            {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
-            {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
-            {{ page.name }}
-        </a>
+        <li>
+            <a class="dropdown-item" href="{{ page.get_absolute_url }}"
+                {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
+                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {{ page.name }}
+            </a>
+        </li>
         {% endif %}
     {% else %}
         {% if page.level == 0 %}
@@ -32,9 +34,9 @@
                 {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
                 {{ page.name }}
             </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="{{ page.slug }}">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="{{ page.slug }}">
                 {{ children }}
-            </div>
+            </ul>
         </li>
         {% else %}
         <a class="dropdown-item" href="{{ page.get_absolute_url }}"
