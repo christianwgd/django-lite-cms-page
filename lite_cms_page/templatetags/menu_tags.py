@@ -26,3 +26,20 @@ def submenu(context, page, template_name):
         'pages': pages,
         'path': request.path
     })
+
+
+@register.simple_tag(takes_context=True)
+def get_active(context, page):
+    request = context['request']
+    if page.slug in request.path:
+        return 'active'
+    return ''
+
+
+@register.simple_tag(takes_context=True)
+def get_active_parent(context, page):
+    request = context['request']
+    for pg in page.get_children():
+        if pg.slug in request.path:
+            return 'active'
+    return ''
