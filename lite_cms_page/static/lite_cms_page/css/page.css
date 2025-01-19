@@ -1,3 +1,11 @@
 .nav-item .nav-link.active {
     border-bottom: 3px solid black;
 }
+
+.bottom-menu {
+    text-decoration: none;
+    padding-bottom: 3px;
+}
+.bottom-menu.active {
+    border-bottom: 3px solid white;
+}

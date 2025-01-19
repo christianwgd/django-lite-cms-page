@@ -10,7 +10,7 @@
             {{ page.name }}
         </span>
         {% else %}
-        <a href="{{ page.get_absolute_url }}" class="bottom-menu"
+        <a href="{{ page.get_absolute_url }}" class="bottom-menu {% get_active page %}"
             {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
             {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
             {{ page.name }}

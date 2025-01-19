@@ -15,11 +15,11 @@
     {% breadcrumb home 'home' %}
     {% if page.parent and not page.parent.breadcrumb_exclude %}
         {% if page.parent.parent and not page.parent.parent.breadcrumb_exclude %}
-            {% breadcrumb page.parent.parent.title 'page:page-view' page.parent.parent.slug %}
+            {% breadcrumb page.parent.parent.title 'lite_cms_page:page-view' page.parent.parent.slug %}
         {% endif %}
-        {% breadcrumb page.parent.title 'page:page-view' page.parent.slug %}
+        {% breadcrumb page.parent.title 'lite_cms_page:page-view' page.parent.slug %}
     {% endif %}
-    {% breadcrumb page.title 'page:page-view' page.slug %}
+    {% breadcrumb page.title 'lite_cms_page:page-view' page.slug %}
 {% endblock %}
 
 {% block content %}
