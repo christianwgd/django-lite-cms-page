@@ -47,8 +47,8 @@ class Page(MPTTModel, ContentFieldMixin, SluggedMixin, BaseEntity):
         return self.name
 
     """
-    In addition to the title field, a page has a name 
-    which designates the menu entry text. 
+    In addition to the title field, a page has a name
+    which designates the menu entry text.
     """
     name = models.CharField(
         max_length=50, verbose_name=_('name'),
@@ -64,21 +64,20 @@ class Page(MPTTModel, ContentFieldMixin, SluggedMixin, BaseEntity):
         Menu, verbose_name=_("Menus"), blank=True
     )
     """
-    The url attrbute can hold a URL to any page, either external as 
-    a normal ``https://`` URL or as a local url pointing to any path 
+    The url attrbute can hold a URL to any page, either external as
+    a normal ``https://`` URL or as a local url pointing to any path
     in the app. In this case the url must start with a ``/``.
-    If this is a page from some app model, the URL is fetched from 
-    ``get_absolute_url()`` and this field should be None. 
+    If this is a page from some app model, the URL is fetched from
+    ``get_absolute_url()`` and this field should be None.
     """
     url = URLOrRelativeURLField(
         verbose_name=_('URL'),
         null=True, blank=True
     )
     """
-    The ``ext`` attribute specifies if the page should be opened in 
-    a new window (True). 
-    Be aware that opening a new window is not recommended by the  
-    Web Accessibility rules! (https://www.w3.org/TR/WCAG20-TECHS/G200.html)
+    The ``ext`` attribute specifies if the page should be opened in
+    a new window (True). Be aware that opening a new window is not
+    recommended by the Web Accessibility rules! (https://www.w3.org/TR/WCAG20-TECHS/G200.html)
     """
     ext = models.BooleanField(
         default=False, verbose_name=_('Open in new window')
