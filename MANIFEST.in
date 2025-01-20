@@ -8,4 +8,4 @@ recursive-exclude * __pycache__
 recursive-exclude * *.png
 recursive-exclude * manage.py
 recursive-exclude *
-recursive-exclude lite_cms_page *
+recursive-exclude lite_cms_page_sample *
