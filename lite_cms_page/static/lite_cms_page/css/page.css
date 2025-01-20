@@ -1,5 +1,5 @@
 .nav-item .nav-link.active {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid var(--bs-dark);
 }
 
 .bottom-menu {
@@ -7,5 +7,5 @@
     padding-bottom: 3px;
 }
 .bottom-menu.active {
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--bs-light);
 }
