@@ -231,5 +231,4 @@ man_pages = [
 ]
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
     html_theme = 'sphinx_rtd_theme'
