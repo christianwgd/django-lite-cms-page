@@ -1,4 +1,4 @@
-{% load menu_tags mptt_tags %}
+{% load menu_tags mptt_tags bootstrap_icons %}
 
 <div class="row bottom-menu-container">
     {% recursetree pages %}
@@ -6,13 +6,13 @@
     <div class="col bg-transparent text-light text-center">
         {% if page.static %}
         <span class="static">
-            {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+            {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
             {{ page.name }}
         </span>
         {% else %}
         <a href="{{ page.get_absolute_url }}" class="bottom-menu {% get_active page %}"
             {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
-            {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+            {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
             {{ page.name }}
         </a>
         {% endif %}

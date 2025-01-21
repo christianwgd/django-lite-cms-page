@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'mptt',
     'django_mptt_admin',
     'adminsortable2',
+    'django_bootstrap_icons',
     'django_bootstrap5',
 ]
 
@@ -116,3 +117,6 @@ SEARCH_MODEL_CHOICES = (
     'lite_cms_page_sample.Menu',
     'lite_cms_page_sample.Page',
 )
+
+# bootstrap-icons
+BS_ICONS_CACHE = os.path.join(STATIC_ROOT, 'icon_cache')

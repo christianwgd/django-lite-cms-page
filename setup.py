@@ -29,6 +29,7 @@ setuptools.setup(
         'django-mptt',
         'django-mptt-admin',
         'django-bootstrap5',
+        'django-bootstrap-icons',
         'django-filebrowser-no-grappelli',
         'django-tinymce',
         'django-lite-cms-core',
