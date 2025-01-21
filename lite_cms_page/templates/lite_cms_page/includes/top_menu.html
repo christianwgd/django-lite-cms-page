@@ -1,4 +1,4 @@
-{% load menu_tags mptt_tags %}
+{% load menu_tags mptt_tags bootstrap_icons %}
 {% recursetree pages %}
 {% with node as page %}
 {% if page.login_required and request.user.is_authenticated or not page.login_required %}
@@ -7,13 +7,13 @@
         <li class="nav-item">
             {% if page.static %}
             <span class="static">
-                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
                 {{ page.name }}
             </span>
             {% else %}
             <a class="nav-link {% get_active page %}" href="{{ page.get_absolute_url }}"
                 {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
-                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
                 {{ page.name }}
             </a>
             {% endif %}
@@ -22,7 +22,7 @@
         <li>
             <a class="dropdown-item {% get_active page %}" href="{{ page.get_absolute_url }}"
                 {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
-                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
                 {{ page.name }}
             </a>
         </li>
@@ -31,7 +31,7 @@
         {% if page.level == 0 %}
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {% get_active page %}{% get_active_parent page %}" id="{{ page.slug }}" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
                 {{ page.name }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="{{ page.slug }}">
@@ -42,7 +42,7 @@
         <li>
             <a class="dropdown-item {% get_active page %}" href="{{ page.get_absolute_url }}"
                 {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
-                {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
                 {{ page.name }}
             </a>
         </li>
