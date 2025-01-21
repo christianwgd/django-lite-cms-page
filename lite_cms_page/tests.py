@@ -122,7 +122,7 @@ class PageTagTest(TestCase):
         )
         for page in self.menu.page_set.all():
             self.assertInHTML(
-                f'<a href="/lite_cms_page/{page.slug}/" class="bottom-menu" title="{page.title}">{page.title}</a>',
+                f'<a href="/lite_cms_page/{page.slug}/" class="" title="{page.title}">{page.title}</a>',
                 response
             )
 
