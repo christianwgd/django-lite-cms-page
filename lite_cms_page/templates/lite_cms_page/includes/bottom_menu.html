@@ -7,13 +7,13 @@
         <li class="list-group-item bg-transparent text-light">
             {% if page.static %}
             <span class="static">
-                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
+                {% if page.icon %}{% bs_icon page.icon %}{% endif %}
                 {{ page.name }}
             </span>
             {% else %}
             <a href="{{ page.get_absolute_url }}" class="{% get_active page %}"
                 {% if page.ext %}target="_blank" rel="noopener"{% endif %} title="{{ page.title }}">
-                {% if page.icon %}{% bs_icon page.icon size='20' %}{% endif %}
+                {% if page.icon %}{% bs_icon page.icon %}{% endif %}
                 {{ page.name }}
             </a>
             {% endif %}
