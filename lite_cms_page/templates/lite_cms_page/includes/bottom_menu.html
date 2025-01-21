@@ -4,9 +4,9 @@
     {% recursetree pages %}
     {% with node as page %}
     <div class="col bg-transparent text-light text-center">
-        {% if lite_cms_page.static %}
+        {% if page.static %}
         <span class="static">
-            {% if lite_cms_page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
+            {% if page.icon %}<i class="{{ page.icon }}"></i>{% endif %}
             {{ page.name }}
         </span>
         {% else %}
