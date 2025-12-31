@@ -1,8 +1,0 @@
-[run]
-omit =
-    ./manage.py
-    */tests.py
-    */migrations/*
-    wsgi.py
-    asgi.py
-    */lite_cms_page_sample/*

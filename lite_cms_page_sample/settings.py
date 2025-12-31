@@ -10,13 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
-import os
+from pathlib import Path
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
-PROJECT_APP = os.path.basename(PROJECT_APP_PATH)
+BASE_DIR = Path(Path(Path(__file__).resolve()).parent).parent
+PROJECT_APP_PATH = Path(Path(__file__).resolve()).parent
+PROJECT_APP = Path(PROJECT_APP_PATH).name
 
 # Settings for tests, override in production with localsettings!
 DEBUG = True
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'  # noqa: S1
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(BASE_DIR, 'test.db'),  # Or path to database file if using sqlite3.
+        'NAME': BASE_DIR / 'test.db',  # Or path to database file if using sqlite3.
     }
 }
 
@@ -105,9 +105,9 @@ SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -119,4 +119,4 @@ SEARCH_MODEL_CHOICES = (
 )
 
 # bootstrap-icons
-BS_ICONS_CACHE = os.path.join(STATIC_ROOT, 'icon_cache')
+BS_ICONS_CACHE = STATIC_ROOT / 'icon_cache'

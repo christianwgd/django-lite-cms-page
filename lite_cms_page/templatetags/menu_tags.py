@@ -47,5 +47,5 @@ def get_active_parent(context, page):
 
 @register.inclusion_tag('lite_cms_page/includes/lang_flag.html')
 def lang_flag(lang_code):
-    img_url = '/static/img/flags/{}.png'.format(lang_code)
+    img_url = f'/static/img/flags/{lang_code}.png'
     return { 'img_url': img_url, 'lang_code': lang_code }
