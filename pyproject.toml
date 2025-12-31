@@ -56,12 +56,10 @@ python_files = ["tests.py", "test_*.py"]
 
 
 [tool.coverage.run]
+include = ["lite_cms_core/*"]
 omit = [
     "*/tests.py",
     "**/*migrations*/*",
-    "lite_cms_page_sample/wsgi.py",
-    "lite_cms_page_sample/asgi.py",
-    "*/lite_cms_page_sample/*",
 ]
 
 [tool.django-stubs]
