@@ -7,7 +7,7 @@ django-lite-cms-core==0.0.9
 django-mptt==0.18.0
 django-mptt-admin==2.9.0
 django-tinymce==5.0.0
-Pillow==12.1.0
+Pillow==12.1.1
 pytest==9.0.2
 pytest-cov==7.0.0
 pytest-django==4.11.1
