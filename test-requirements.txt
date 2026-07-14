@@ -1,4 +1,4 @@
-django==6.0.5
+django>=6.0.7
 django-admin-sortable2==2.3.1
 django-bootstrap5==26.2
 django-bootstrap-icons==0.9.0
@@ -7,13 +7,13 @@ django-lite-cms-core==0.0.9
 django-mptt==0.18.0
 django-mptt-admin==2.9.0
 django-tinymce==5.0.0
-Pillow==12.2.0
-pytest==9.0.3
+Pillow==12.3.0
+pytest==9.1.1
 pytest-cov==7.1.0
 pytest-django==4.12.0
-ruff==0.15.13
-coverage==7.14.0
-Faker==40.18.0
-pytest==9.0.3
+ruff==0.15.21
+coverage==7.15.1
+Faker==40.28.1
+pytest==9.1.1
 pytest-cov==7.1.0
 pytest-django==4.12.0
